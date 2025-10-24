@@ -1,0 +1,38 @@
+/* about.css */
+body {
+  margin: 0;
+  background-color: #F0F0F5;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 64px;
+  color: #F4A261;
+  margin-top: 50px;
+}
+
+p {
+  max-width: 1000px;
+  margin: 50px auto;
+  font-size: 20px;
+  color: #123161;
+  line-height: 1.6;
+  padding: 0 20px;
+}
+
+button {
+  font-size: 24px;
+  background-color: #F4A261;
+  color: #F0F0F5;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 50px;
+}
+
+button:hover {
+  background-color: #e38d46;
+}

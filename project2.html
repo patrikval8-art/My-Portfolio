@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>3D Map for Maslinica Hotels & Resort</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #F0F0F5;
+      color: #123161;
+      margin: 0;
+      padding: 60px 20px;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      padding: 50px;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: #F4A261;
+      margin-top: 0;
+    }
+
+    h2 {
+      color: #123161;
+      font-size: 26px;
+      margin-top: 40px;
+    }
+
+    /* Project images stacked vertically */
+    .image-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      margin: 40px 0;
+    }
+
+    .image-container {
+      text-align: center;
+    }
+
+    .project-image {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .caption {
+      margin-top: 8px;
+      font-weight: 600;
+      color: #123161;
+    }
+
+    /* Process list */
+    .process-list {
+      list-style: none;
+      padding-left: 0;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .process-list li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 8px;
+    }
+
+    .process-list li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: #F4A261;
+      font-weight: bold;
+    }
+
+    /* Back button */
+    .back-btn {
+      display: inline-block;
+      margin-top: 40px;
+      background-color: #F4A261;
+      color: #F0F0F5;
+      font-weight: 700;
+      font-size: 18px;
+      border: none;
+      border-radius: 16px;
+      padding: 12px 28px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background-color: #e38d46;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>3D Map for Maslinica Hotels & Resort</h1>
+
+    <!-- Project Overview -->
+    <h2>Project Overview</h2>
+    <p>
+      I created a detailed 3D model of a resort in Blender. The project was particularly challenging due to the resort’s large scale and complexity. The model was developed in two versions to explore different approaches and highlight various aspects of the resort.
+    </p>
+
+    <!-- Tools Used -->
+    <h2>Tools Used</h2>
+    <p><b>Blender</b>, <b>Photoshop</b></p>
+
+    <!-- Three stacked images -->
+    <div class="image-gallery">
+      <div class="image-container">
+        <img src="images/resort map.png" alt="Version 1" class="project-image">
+        <p class="caption">Version 1</p>
+      </div>
+
+      <div class="image-container">
+        <img src="images/resort map2.png" alt="Version 2" class="project-image">
+        <p class="caption">Version 2</p>
+      </div>
+
+      <div class="image-container">
+        <img src="images/map legend.png" alt="Resort legend" class="project-image">
+        <p class="caption">Resort legend</p>
+      </div>
+    </div>
+
+    <!-- Work Process -->
+    <h2>Work Process</h2>
+    <ul class="process-list">
+      <li>Version 1 focused on visual detail, with extensive time spent in Photoshop to enhance textures and presentation.</li>
+      <li>Version 2 prioritized practicality and included more points of interest for better usability.</li>
+      <li>Both versions were refined and reviewed to balance aesthetics and functionality in the final outcome.</li>
+    </ul>
+
+    <!-- Result -->
+    <h2>Result</h2>
+    <p>
+      The final outcome consists of two complementary models: Version 1 emphasizes polished visuals, while Version 2 provides a more practical and comprehensive representation of the resort. Together, they showcase both aesthetic quality and functional design considerations.
+    </p>
+
+    <a href="#" class="back-btn" onclick="window.close(); return false;">Close Window</a>
+  </div>
+</body>
+</html>

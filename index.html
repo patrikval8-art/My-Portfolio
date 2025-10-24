@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Patrik | Portfolio</title>
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Nav: kept your markup but ordered and with nav-link class for JS -->
+  <nav>
+    <div class="logo">
+      <!-- Put logo.svg in same folder or adjust the path -->
+      <img src="logo.svg" alt="Logo">
+    </div>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <ul>
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#mywork" class="nav-link">My Work</a></li>
+    </ul>
+  </nav>
+
+  <section id="home" class="reveal-section">
+    <h1 class="custom-heading">
+      Hi I am Patrik,<br>
+      <b>digital marketer</b> with a passion for <b>web-design</b>
+    </h1>
+
+    <div class="button-container">
+      <button class="mywork-button">My Work</button>
+    </div>
+  </section>
+
+  <section id="about" class="reveal-section">
+    <h2>About</h2>
+    <div class="about-content">
+      <div class="about-box">
+        <div class="about-left">
+          <p>
+            I’m a passionate digital marketer and designer who loves creating engaging online experiences. 
+            My focus is on combining data-driven marketing with modern design principles to help brands 
+            connect authentically with their audiences.
+          </p>
+          <!-- This button opens the about.html in a new window -->
+          <button class="about-button" id="openAbout">About Me</button>
+        </div>
+        <div class="about-right">
+          <!-- Put mask1.png in same folder or adjust path -->
+          <img src="images/mask1.png" alt="Portrait">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="reveal-section">
+    <h2>Skills</h2>
+    <div class="skills-content">
+      <p id="skills-text">
+        I’m proficient in a diverse range of <b>creative and technical tools,</b> <br>combining <b>design
+        expertise</b> with <b>web development</b> 
+        and <br><b>content creation skills</b> to deliver <b>visually engaging and functional projects.</b>
+      </p>
+      <button class="skills-button" id="showSkillsBtn">Show Skills</button>
+
+      <div class="skills-grid" id="skillsGrid">
+        <div class="skill-item"><img src="icons/figma.svg" alt="Figma"><span>Figma</span></div>
+        <div class="skill-item"><img src="icons/canva.svg" alt="Canva"><span>Canva</span></div>
+        <div class="skill-item"><img src="icons/blender.svg" alt="Blender"><span>Blender</span></div>
+        <div class="skill-item"><img src="icons/illustrator.svg" alt="Illustrator"><span>Illustrator</span></div>
+        <div class="skill-item"><img src="icons/photoshop.svg" alt="Photoshop"><span>Photoshop</span></div>
+        <div class="skill-item"><img src="icons/after effects.svg" alt="After Effects"><span>After Effects</span></div>
+        <div class="skill-item"><img src="icons/davinci resolve.svg" alt="Davinci Resolve"><span>Davinci Resolve</span></div>
+        <div class="skill-item"><img src="icons/microsoft suite.svg" alt="Microsoft Suite"><span>Microsoft Suite</span></div>
+        <div class="skill-item"><img src="icons/html.svg" alt="HTML"><span>HTML</span></div>
+        <div class="skill-item"><img src="icons/CSS.svg" alt="CSS"><span>CSS</span></div>
+        <div class="skill-item"><img src="icons/javascript.svg" alt="Javascript"><span>Javascript</span></div>
+        <div class="skill-item"><img src="icons/wordpress.svg" alt="Wordpress"><span>Wordpress</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="mywork" class="reveal-section">
+    <h2>My Work</h2>
+    <div class="projects-grid">
+      <div class="project-box" data-url="project1.html">
+        <img src="images/project 1.png" alt="Project 1">
+        <h3 class="project-title">Camp map for Oliva Camping 3*</h3>
+      </div>
+      <div class="project-box" data-url="project2.html">
+        <img src="images/project 2.png" alt="Project 2">
+        <h3 class="project-title">3D map for Maslinica Hotels & Resort</h3>
+      </div>
+      <div class="project-box" data-url="project3.html">
+        <img src="images/project 3.png" alt="Project 3">
+        <h3 class="project-title">Proposal for the Late Summer Campaign</h3>
+      </div>
+      <div class="project-box" data-url="project4.html">
+        <img src="images/project 4.png" alt="Project 4">
+        <h3 class="project-title">Video ad for a boat picnic</h3>
+      </div>
+      <div class="project-box" data-url="project5.html">
+        <img src="images/project 5.png" alt="Project 5">
+        <h3 class="project-title">Promotional Flyers for Food & Beverage</h3>
+      </div>
+      <div class="project-box" data-url="project6.html">
+        <img src="images/project 6.png" alt="Project 6">
+        <h3 class="project-title">Menus for Food & Beverage</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- External JS (placed at bottom so it runs after DOM loads) -->
+  <script src="script.js"></script>
+</body>
+</html>

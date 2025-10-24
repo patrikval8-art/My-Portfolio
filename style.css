@@ -1,0 +1,560 @@
+/* Global styles */
+:root {
+  --nav-height: 88px; /* used so fixed nav doesn't overlap content */
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  background-color: #F0F0F5;
+}
+
+/* Add top padding so fixed nav doesn't overlap the top content */
+body {
+  padding-top: var(--nav-height);
+}
+
+/* Navigation */
+/* Fixed nav, same visual as before */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  padding: 1.5em 100px;
+  box-sizing: border-box;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+/* logo sizing kept from original */
+.logo img {
+  height: 50px;
+  width: auto;
+  padding: 1em 100px;
+}
+
+/* nav list kept but made a bit more robust */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 70px;
+  align-items: center;
+}
+
+nav a {
+  color: #123161;
+  text-decoration: none;
+  font-weight: 400;
+  position: relative;
+  padding: .25rem 0;
+}
+
+/* active underline animation to indicate which section is active */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 3px;
+  width: 0%;
+  background: #F4A261;
+  transition: width 250ms ease;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+nav a:hover {
+  text-decoration: none;
+}
+
+/* Home heading (preserved layout) */
+.custom-heading {
+  width: 1090px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 90px;
+  line-height: 1;
+  margin: 50px auto 20px auto;
+  text-align: center;
+  color: #123161;
+}
+
+/* Button section */
+.button-container {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.mywork-button {
+  width: 200px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  color: #F0F0F5;
+  background-color: #F4A261;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.18s ease;
+  margin-bottom: 70px;
+}
+
+.mywork-button:hover {
+  background-color: #e38d46;
+  transform: translateY(-3px);
+}
+
+/* ===== About Section ===== */
+
+#about {
+  margin-top: 150px;
+  position: relative;
+}
+
+.about-content {
+  margin: 0 auto;
+}
+
+#about h2 {
+  font-size: 64px;
+  color: #F4A261;
+  text-align: left;
+  width: 1090px;
+  margin: 0 auto 40px auto;
+}
+
+.about-box {
+  width: 1090px;
+  max-width: 100%;
+  background-color: #D9D9D9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 20px;
+  margin: 25px auto 40px auto;
+}
+
+/* Left side: paragraph and button */
+.about-left {
+  width: 421px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 30px;
+  height: 355px;
+}
+
+.about-left p {
+  margin-top: 0;
+  font-size: 20px;
+  color: #123161;
+  line-height: 1.5;
+}
+
+.about-button {
+  width: 180px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #F0F0F5;
+  background-color: #F4A261;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.about-button:hover {
+  background-color: #e38d46;
+}
+
+/* Right side: portrait image */
+.about-right {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-right: -60px;
+}
+
+.about-right img {
+  width: auto;
+  height: 600px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translateY(238px);
+  border-radius: 20px;
+}
+
+/* ===== Skills Section ===== */
+#skills {
+  margin-top: 150px;
+  position: relative;
+}
+
+#skills h2 {
+  font-size: 64px;
+  color: #F4A261;
+  text-align: center;
+  width: 1090px;
+  margin: 0 auto 0px auto;
+}
+
+.skills-content {
+  width: 1090px;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  text-align: center;
+  overflow: hidden; /* hide grid when collapsed */
+  transition: max-height 0.6s ease;
+  max-height: 200px; /* initial height showing paragraph + button */
+}
+
+.skills-content.expanded {
+  max-height: 1200px; /* enough to fit the full grid */
+}
+
+.skills-content p {
+  font-size: 20px;
+  color: #123161;
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+
+.skills-button {
+  width: 180px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #F0F0F5;
+  background-color: #F4A261;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 40px;
+}
+
+.skills-button:hover {
+  background-color: #e38d46;
+}
+
+/* Skills grid (initially hidden with opacity) */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.skills-content.expanded .skills-grid {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.skill-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.skill-item span {
+  font-weight: 600;
+  color: #123161;
+}
+
+/* ===== My Work Section ===== */
+#mywork {
+  margin-top: 150px;
+  background-color: #F0F0F5;
+  padding-bottom: 100px;
+}
+
+#mywork h2 {
+  font-size: 64px;
+  color: #F4A261;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 40px;
+  width: 1090px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.project-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.project-box {
+  background-color: #ffffff;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  overflow: visible;
+  padding-bottom: 5px;
+}
+
+.project-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.project-title {
+  color: #123161;
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+/* ===== Scroll reveal utility (subtle) ===== */
+.reveal-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+/* when JS sets .in-view we reveal the section */
+.reveal-section.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* small responsive tweaks to keep original layout intact on smaller screens */
+@media (max-width: 1100px) {
+  .custom-heading { font-size: 56px; width: 90%; margin-top: 140px; }
+  .about-right img { height: 400px; transform: translateY(0); position: static; }
+  nav { padding: 1em 30px; }
+  .logo img { padding: 0; height: 42px; }
+  nav ul { gap: 28px; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+
+
+/* ===================================
+   MOBILE-FRIENDLY ADAPTATIONS (UPDATED)
+   =================================== */
+
+   /* HIDE hamburger by default (visible only in mobile) */
+.menu-toggle {
+  display: none;
+}
+
+
+@media (max-width: 768px) {
+
+  html, body {
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  /* ===== NAVIGATION ===== */
+  nav {
+    padding: 0.8em 20px;
+    height: auto;
+    justify-content: space-between;
+    background-color: rgba(240,240,245,0.95);
+  }
+
+  .logo img {
+    height: 40px;
+    padding: 0;
+  }
+
+  /* Show hamburger only on mobile */
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #123161;
+  }
+
+  /* Nav menu collapsible */
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: var(--nav-height);
+    right: 0;
+    background: rgba(240,240,245,0.97);
+    width: 100%;
+    padding: 1em 0;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+  }
+
+  nav ul.show {
+    display: flex;
+    max-height: 500px;
+    opacity: 1;
+  }
+
+  nav a {
+    display: block;
+    padding: 0.8em 0;
+    font-size: 18px;
+  }
+
+  /* ===== HOME SECTION ===== */
+  .custom-heading {
+    width: 90%;
+    font-size: 34px;
+    line-height: 1.3;
+    margin: 120px auto 30px auto;
+  }
+
+  .mywork-button {
+    width: 160px;
+    font-size: 18px;
+    border-radius: 15px;
+  }
+
+  /* ===== ABOUT SECTION ===== */
+  #about h2 {
+    width: 90%;
+    text-align: center;
+    font-size: 40px;
+  }
+
+  .about-box {
+    width: 90%;
+    flex-direction: column;
+    padding: 30px 25px;
+    text-align: center;
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border-radius: 20px;
+    border: 1px solid #e0e0e0;
+  }
+
+  .about-left {
+    width: 100%;
+    height: auto;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .about-left p {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .about-right {
+    display: none; /* hide image on mobile */
+  }
+
+  .about-button {
+    width: 150px;
+    font-size: 18px;
+  }
+
+  /* ===== SKILLS SECTION ===== */
+  #skills h2 {
+    width: 90%;
+    font-size: 40px;
+  }
+
+  .skills-content {
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    transition: max-height 0.6s ease, margin-bottom 0.6s ease;
+    max-height: 300px; /* fits the intro text + button */
+    margin-bottom: 0;
+  }
+
+  .skills-content.expanded {
+    max-height: 2000px; /* enough for full grid */
+    margin-bottom: 40px; /* space when expanded */
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .skill-item img {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* ===== MY WORK SECTION ===== */
+  #mywork h2 {
+    font-size: 40px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    width: 90%;
+    gap: 25px;
+  }
+
+  .project-box {
+    border-radius: 15px;
+  }
+
+  .project-title {
+    font-size: 18px;
+  }
+
+  /* ===== GENERAL SPACING ===== */
+  section {
+    margin-top: 80px !important;
+  }
+
+  .reveal-section {
+    transform: none;
+  }
+}
